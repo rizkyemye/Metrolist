@@ -9,7 +9,9 @@ import android.graphics.Bitmap
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialExpressiveTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.MotionScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
@@ -25,7 +27,7 @@ import com.materialkolor.dynamiccolor.ColorSpec
 import com.materialkolor.rememberDynamicColorScheme
 import com.materialkolor.score.Score
 
-val DefaultThemeColor = Color(0xFFED5564)
+val DefaultThemeColor = Color(0xFFE11D74)   // LizMusic: pink khas
 
 @Composable
 fun MetrolistTheme(
@@ -61,9 +63,11 @@ fun MetrolistTheme(
         }
     }
 
-    // Use standard MaterialTheme instead of MaterialExpressiveTheme
-    MaterialTheme(
+    // LizMusic: pakai Material 3 Expressive (tema + gerakan) biar tampilannya
+    // lebih "hidup" seperti player modern — warna tetap dari pink khas LizMusic.
+    MaterialExpressiveTheme(
         colorScheme = colorScheme,
+        motionScheme = MotionScheme.expressive(),
         content = content,
     )
 }
